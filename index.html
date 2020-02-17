@@ -27,8 +27,8 @@
               <button class="btn btn-warning btn-xs begin-button">
                 <span class="fa fa-music"></span> Begin</button>
              <!-- This button will restart the quiz when clicked -->
-              <button class="btn btn-dark btn-xs restart-button">
-                <span class="fa fa-pause"></span> Restart</button>
+              <button class="btn btn-dark btn-xs highscore-button">
+                <span class="fa fa-pause"></span> High Scores</button>
         </div>
 
 
@@ -36,45 +36,47 @@
         <div class = "form1">
             <div id= "list-group1">
                 <label for="question1" id="question1">What does the acronym NaN stand for?</label>
-                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">Never a Number</button>
-                <button type="button" id="correctAnswer" class="list-group-item list-group-item-action text-center">Not a Number</button>
-                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">No alternate Name</button>
-                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">Never a Name</button>
-                <button type="formSubmit1" class="btn btn-primary" id = "formSubmit1">Submit</button>
+                <button type="button" class="list-group-item list-group-item-action text-center wrongAnswer">Never a Number</button>
+                <button type="button" class="list-group-item list-group-item-action text-center">Not a Number</button>
+                <button type="button" class="list-group-item list-group-item-action text-center wrongAnswer">No alternate Name</button>
+                <button type="button" class="list-group-item list-group-item-action text-center wrongAnswer">Never a Name</button>
+                <button type="Submit" class="btn btn-primary formSubmit1">Submit</button>
             </div>
         </div>
 
         <!-- This is where the question 2 form begins -->
         <div class = form2>
             <div class="list-group2">
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="submit2" class="btn btn-primary">Submit</button>
+                <label for="question2" id="question2">What is the correct way to write an array?</label>
+                <button type="button" id="correctAnswer" class="list-group-item list-group-item-action text-center">var x = [1, 2, 3];</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">var x = [1 - 2 - 3];</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">var x != [1, 2, 3];</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">var x = {1, 2, 3};</button>
+                <button type="Submit" class="btn btn-primary formSubmit2">Submit</button>
             </div>
         </div>
 
         <!-- This is where the question 3 form begins -->
         <div class = form3>
             <div class="list-group3">
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+                <label for="question3" id="question3">Javascript has __________ and _________ scopes.</label>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">regional, defined</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">hypertext, markup</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">left scope, right scope</button>
+                <button type="button" id="correctAnswer" class="list-group-item list-group-item-action text-center">global, local</button>
+                <button type="formSubmit3" class="btn btn-primary formSubmit3">Submit</button>
             </div>
         </div>
 
         <!-- This is where the question 4 form begins -->
         <div class = form4>
             <div class="list-group4">
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+                <label for="question4" id="question4">What is the correct way to write an on click event for jQuery?</label>
+                <button type="button" id="correctAnswer" class="list-group-item list-group-item-action text-center">$("#click-me").on("click", function(){}</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">$("#click-me")on("click", function(){}</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">$("#click-me").onClick(function(){}</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">$("#click-me").click("on", function(){}</button>
+                <button type="formSubmit4" class="btn btn-primary formSubmit4">Submit</button>
             </div>
         </div>
 
@@ -96,10 +98,26 @@
 
         $(".formSubmit1").on("click", function(e) {
             e.preventDefault();
-            $("#beginRestart").css('display','none');
-            $(".form1").css('display','block');
+            $(".form1").css("display", "none");
+            $(".form2").css('display','block');
         });
 
+        $(".formSubmit2").on("click", function(e) {
+            e.preventDefault();
+            $(".form2").css("display", "none");
+            $(".form3").css('display','block');
+        });
+
+        $(".formSubmit3").on("click", function(e) {
+            e.preventDefault();
+            $(".form4").css('display','block');
+            $(".form3").css("display", "none");
+        });
+
+        $(".formSubmit4").on("click", function(e) {
+            e.preventDefault();
+            $(".form4").css("display", "none");
+        });
 
     </script>
 
