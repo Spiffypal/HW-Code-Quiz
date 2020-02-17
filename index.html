@@ -4,27 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HW Week4 Code Quiz</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-</head>
+    </head>
 <body>
 
-<!-- This is the container making the entire page  -->
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+
+<!-- This is the container for the entire page  -->
 <div class="container-lg">
 
 
 <!-- This is the jumptron top of page header stating "Javascript Quiz" -->
-        <div class="jumbotron jumbotron-fluid text-center border border-secondary">
-            <div class="container">
-                <h1 class="display-6">Javascript Quiz</h1>
-            <p class="lead">The clock will start when you click "Begin!" - time is subtracted for incorrect answers.</p>
-            </div>
+        <div class="jumbotron">
+            <h1 class="text-center">
+                <strong>Javascript Quiz!</strong>
+            </h1>
+            <div id="beginRestart" class="text-center">
+             <!-- This button will begin the quiz when clicked -->
+              <button class="btn btn-warning btn-xs begin-button">
+                <span class="fa fa-music"></span> Begin</button>
+             <!-- This button will restart the quiz when clicked -->
+              <button class="btn btn-dark btn-xs restart-button">
+                <span class="fa fa-pause"></span> Restart</button>
         </div>
 
 
     <!-- This is where the question 1 form begins -->
-        <div class = form1>
-            <div class="list-group">
+        <div class = "form1">
+            <div id= "list-group1">
+                <label for="question1" id="question1">What does the acronym NaN stand for?</label>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">Never a Number</button>
+                <button type="button" id="correctAnswer" class="list-group-item list-group-item-action text-center">Not a Number</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">No alternate Name</button>
+                <button type="button" id="wrongAnswer" class="list-group-item list-group-item-action text-center">Never a Name</button>
+                <button type="formSubmit1" class="btn btn-primary" id = "formSubmit1">Submit</button>
+            </div>
+        </div>
+
+        <!-- This is where the question 2 form begins -->
+        <div class = form2>
+            <div class="list-group2">
+                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+                <button type="submit2" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+        <!-- This is where the question 3 form begins -->
+        <div class = form3>
+            <div class="list-group3">
+              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
+            </div>
+        </div>
+
+        <!-- This is where the question 4 form begins -->
+        <div class = form4>
+            <div class="list-group4">
                 <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
                 <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
                 <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
@@ -33,42 +78,31 @@
             </div>
         </div>
 
-        <!-- This is where the question 2 form begins -->
-        <!-- <div class = form2>
-            <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-            </div>
-        </div> -->
 
-        <!-- This is where the question 3 form begins -->
-        <!-- <div class = form3>
-            <div class="list-group">
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-              <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-            </div>
-        </div> -->
-
-        <!-- This is where the question 4 form begins -->
-        <!-- <div class = form4>
-            <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-                <button type="button" class="list-group-item list-group-item-action text-center">placeholder text</button>
-            </div>
-        </div> -->
-
-
-    <!-- The submit button to take you tothe next question and deduct/add time to the clock. -->
-        <input class="btn btn-primary text-center float-right margin-top: 10px" type="submit" value="Submit">
+    <!-- The submit button to take you to the next question and deduct/add time to the clock. -->
     </div>
+
+
+
+    <!-- Begin jQuery -->
+    <script>
+
+
+        $(".begin-button").on("click", function(e) {
+            e.preventDefault();
+            $("#beginRestart").css('display','none');
+            $(".form1").css('display','block');
+          });
+
+        $(".formSubmit1").on("click", function(e) {
+            e.preventDefault();
+            $("#beginRestart").css('display','none');
+            $(".form1").css('display','block');
+        });
+
+
+    </script>
+
+    
 </body>
 </html>

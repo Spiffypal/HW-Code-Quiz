@@ -1,0 +1,21 @@
+
+/* The styling of the click me button to begin the quiz */
+h2 {
+    text-align: center;
+}
+
+.form1 {
+    display: none;
+}
+
+.form2 {
+    display: none;
+}
+
+.form3 {
+    display: none;
+}
+
+.form4 {
+    display: none;
+}
