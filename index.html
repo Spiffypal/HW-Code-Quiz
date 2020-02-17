@@ -9,30 +9,29 @@
     </head>
 <body>
 
-    <!-- JQuery -->
+    <!-- JQuery Link -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Javascript Link -->
+    <script src="assets/script.js"></script>
 
-
+<!-- Begin bootstrap -->
 <!-- This is the container for the entire page  -->
 <div class="container-lg">
 
 
-<!-- This is the jumptron top of page header stating "Javascript Quiz" -->
+        <!-- This is the jumptron top of page header stating "Javascript Quiz" -->
         <div class="jumbotron">
             <h1 class="text-center">
                 <strong>Javascript Quiz!</strong>
             </h1>
             <div id="beginRestart" class="text-center">
              <!-- This button will begin the quiz when clicked -->
-              <button class="btn btn-warning btn-xs begin-button">
-                <span class="fa fa-music"></span> Begin</button>
+              <button type="button" class="btn btn-secondary btn-lg btn-block begin-button">Begin</button>
              <!-- This button will restart the quiz when clicked -->
-              <button class="btn btn-dark btn-xs highscore-button">
-                <span class="fa fa-pause"></span> High Scores</button>
+              <button type="button" class="btn btn-secondary btn-lg btn-block highscore-button">High Scores</button>
         </div>
 
-
-    <!-- This is where the question 1 form begins -->
+        <!-- This is where the question 1 form begins -->
         <div class = "form1">
             <div id= "list-group1">
                 <label for="question1" id="question1">What does the acronym NaN stand for?</label>
@@ -80,45 +79,85 @@
             </div>
         </div>
 
+        <!-- This is the high score page that is originially hidden until HighScore button is pressed, or the quiz is completed -->
+        <div class = hsList>
+            <ul class="list-group">
+                <li class="list-group-item">Placeholder HighScore</li>
+            </ul>
+        </div>
 
-    <!-- The submit button to take you to the next question and deduct/add time to the clock. -->
-    </div>
+        <!-- This is the page that shows after question 4 with the time input of the clock and where you enter your initials. -->
+        <form>
+            <div class="entryForm">
+              <label for="initials">Congratulations! Enter your initials to be added to the high score list!</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ENTER YOUR INITIALS HERE">
+              <button type="button" class="btn btn-primary btn-sm addInitials">Add Name</button>
+              <a class="btn btn-secondary restart-button" href="file:///C:/Users/wschoonmaker/Desktop/uncc/HW/HW-Code-Quiz/HW-Code-Quiz/index.html" role="button">Restart</a></button>
+        </form>
+
+        <!-- This is where the timer will show when Begin is clicked. -->
+        <div class="card">
+            <div class="timerCard">
+              
+            </div>
+          </div>
+
+</div>
 
 
 
     <!-- Begin jQuery -->
     <script>
 
+        $(document).ready(function() {
 
-        $(".begin-button").on("click", function(e) {
-            e.preventDefault();
-            $("#beginRestart").css('display','none');
-            $(".form1").css('display','block');
-          });
+            // Begin on click function for begin button to show first question and start timer.
+            $(".begin-button").on("click", function(e) {
+                e.preventDefault();
+                $(".form1").css("display", "block");
+                $("#beginRestart").css('display','none');
+                $(".hsList").css("display", "none");
+            });
 
-        $(".formSubmit1").on("click", function(e) {
-            e.preventDefault();
-            $(".form1").css("display", "none");
-            $(".form2").css('display','block');
+            // Begin on click function show high score page form.
+            $(".highscore-button").on("click", function(e) {
+                e.preventDefault();
+                $(".hsList").css("display", "block");
+            });
+
+            // Begin on click function for begin button to show second question form and hide first question form.
+            $(".formSubmit1").on("click", function(e) {
+                e.preventDefault();
+                $(".form1").css("display", "none");
+                $(".form2").css('display','block');
+            });
+
+            // Begin on click function for begin button to show third question form and hide second question form.
+            $(".formSubmit2").on("click", function(e) {
+                e.preventDefault();
+                $(".form2").css("display", "none");
+                $(".form3").css('display','block');
+            });
+
+            // Begin on click function for begin button to show fourth question form and hide third question form.
+            $(".formSubmit3").on("click", function(e) {
+                e.preventDefault();
+                $(".form4").css('display','block');
+                $(".form3").css("display", "none");
+            });
+
+            // Begin on click function for begin button to show high score page and hide fourth first question form.
+            $(".formSubmit4").on("click", function(e) {
+                e.preventDefault();
+                $(".form4").css("display", "none");
+                $(".hsList").css("display", "none");
+                $("#beginRestart").css('display','none');
+                $(".entryForm").css("display", "block");
+            });
+
+           // The submit button to take you to the next question and deduct/add time to the clock.
+        
         });
-
-        $(".formSubmit2").on("click", function(e) {
-            e.preventDefault();
-            $(".form2").css("display", "none");
-            $(".form3").css('display','block');
-        });
-
-        $(".formSubmit3").on("click", function(e) {
-            e.preventDefault();
-            $(".form4").css('display','block');
-            $(".form3").css("display", "none");
-        });
-
-        $(".formSubmit4").on("click", function(e) {
-            e.preventDefault();
-            $(".form4").css("display", "none");
-        });
-
     </script>
 
     

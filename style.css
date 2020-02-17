@@ -1,5 +1,5 @@
 
-/* The styling of the click me button to begin the quiz */
+/* The hidden form styling of the page */
 h2 {
     text-align: center;
 }
@@ -17,5 +17,17 @@ h2 {
 }
 
 .form4 {
+    display: none;
+}
+
+.hsList {
+    display: none;
+}   
+
+.entryForm {
+    display: none;
+}
+
+.timer {
     display: none;
 }
