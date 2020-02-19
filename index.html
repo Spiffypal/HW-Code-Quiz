@@ -12,7 +12,7 @@
     <!-- JQuery Link -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Javascript Link -->
-    <script src="assets/script.js"></script>
+    <!-- <script src="assets/script.js"></script> -->
 
 <!-- Begin bootstrap -->
 <!-- This is the container for the entire page  -->
@@ -29,7 +29,13 @@
               <button type="button" class="btn btn-secondary btn-lg btn-block begin-button">Begin</button>
              <!-- This button will restart the quiz when clicked -->
               <button type="button" class="btn btn-secondary btn-lg btn-block highscore-button">High Scores</button>
+            </div>
+
+                
+        <div class="card">
+            <div class="card-body timer"><h3 class=timer></h3></div>
         </div>
+
 
         <!-- This is where the question 1 form begins -->
         <div class = "form1">
@@ -42,6 +48,8 @@
                 <button type="Submit" class="btn btn-primary formSubmit1">Submit</button>
             </div>
         </div>
+
+
 
         <!-- This is where the question 2 form begins -->
         <div class = form2>
@@ -96,11 +104,7 @@
         </form>
 
         <!-- This is where the timer will show when Begin is clicked. -->
-        <div class="card">
-            <div class="timerCard">
-              
-            </div>
-          </div>
+
 
 </div>
 
@@ -114,6 +118,7 @@
             // Begin on click function for begin button to show first question and start timer.
             $(".begin-button").on("click", function(e) {
                 e.preventDefault();
+                $(".h2").css("display", "block");
                 $(".form1").css("display", "block");
                 $("#beginRestart").css('display','none');
                 $(".hsList").css("display", "none");
@@ -155,8 +160,24 @@
                 $(".entryForm").css("display", "block");
             });
 
+            
+                var timerEl = document.querySelector(".timer");
+                var secondsLeft = 200;
+
+                function setTime() {
+                    var timerInterval = setInterval(function() {
+                        secondsLeft--;
+                        timerEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+
+                        if(secondsLeft === 0) {
+                        clearInterval(timerInterval);
+                        sendMessage();
+                        }
+
+                    }, 1000);
+                }
+
            // The submit button to take you to the next question and deduct/add time to the clock.
-        
         });
     </script>
 

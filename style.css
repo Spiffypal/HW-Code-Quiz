@@ -1,6 +1,6 @@
 
 /* The hidden form styling of the page */
-h2 {
+h3 {
     text-align: center;
 }
 
@@ -28,6 +28,3 @@ h2 {
     display: none;
 }
 
-.timer {
-    display: none;
-}
